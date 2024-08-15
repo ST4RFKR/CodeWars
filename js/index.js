@@ -20,7 +20,6 @@ const number1 = (array) => array.map((item, idx) => `${idx + 1}:${item}`);
 const positiveSum = (arr) => arr.filter((i) => i > 0).reduce((acc, item) => (acc += item), 0);
 
 positiveSum([1, -4, 7, 12]);
-console.log(positiveSum([1, -4, 7, 12]));
 
 // 8 kyu If you can't sleep, just count sheep!!
 // Task:
@@ -36,6 +35,16 @@ var countSheep = function (num) {
   }
   return str;
 };
-console.log(countSheep(4));
-console.log(countSheep(0));
-console.log(countSheep(1));
+
+// 8 kyu Count by X
+// Create a function with two arguments that will return an array of the first n multiples of x.
+// Assume both the given number and the number of times to count will be positive numbers greater than 0.
+// Return the results as an array or list ( depending on language ).
+
+function countBy(x, n) {
+  let z = [];
+  for (let i = 1; i <= n; i++) {
+    z.push(x * i);
+  }
+  return z;
+}
