@@ -10,3 +10,4 @@ var number = function (array) {
 
   return fixedArr;
 };
+const number = (array) => array.map((item, idx) => `${idx + 1}:${item}`);
