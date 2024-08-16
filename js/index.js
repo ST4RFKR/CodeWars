@@ -4,11 +4,11 @@
 // Write a function which takes a list of strings and returns each line prepended by the correct number.
 const arr = ['a', 'b', 'c'];
 var number = function (array) {
-  const fixedArr = array.map((item, idx) => {
-    return `${idx + 1}:${item}`;
-  });
+    const fixedArr = array.map((item, idx) => {
+        return `${idx + 1}:${item}`;
+    });
 
-  return fixedArr;
+    return fixedArr;
 };
 const number1 = (array) => array.map((item, idx) => `${idx + 1}:${item}`);
 
@@ -26,14 +26,14 @@ positiveSum([1, -4, 7, 12]);
 // Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
 
 var countSheep = function (num) {
-  let str = '';
-  if (num < 0) return;
-  if (num === 0) return str;
-  for (let i = 0; i < num; i++) {
-    console.log(i);
-    str = str + `${i + 1} sheep...`;
-  }
-  return str;
+    let str = '';
+    if (num < 0) return;
+    if (num === 0) return str;
+    for (let i = 0; i < num; i++) {
+        console.log(i);
+        str = str + `${i + 1} sheep...`;
+    }
+    return str;
 };
 
 // 8 kyu Count by X
@@ -42,11 +42,11 @@ var countSheep = function (num) {
 // Return the results as an array or list ( depending on language ).
 
 function countBy(x, n) {
-  let z = [];
-  for (let i = 1; i <= n; i++) {
-    z.push(x * i);
-  }
-  return z;
+    let z = [];
+    for (let i = 1; i <= n; i++) {
+        z.push(x * i);
+    }
+    return z;
 }
 
 //16.08.2024
@@ -70,21 +70,22 @@ function countBy(x, n) {
 // I is misinterpreted as 1
 // The test cases contain numbers only by mistake.
 let str = 'L0ND0N';
+
 function correct(string) {
-  let inCorrect = ['0', '5', '1'];
-  let correct = ['O', 'S', 'I']
-  let strToArr = string.split('');
+    let inCorrect = ['0', '5', '1'];
+    let correct = ['O', 'S', 'I']
+    let strToArr = string.split('');
 
 
-for (let i = 0; i < strToArr.length; i++){
-  for (let j = 0; j < inCorrect.length; j++){
-    if (strToArr[i] === inCorrect[j]){
-      strToArr[i] = correct[j]
+    for (let i = 0; i < strToArr.length; i++) {
+        for (let j = 0; j < inCorrect.length; j++) {
+            if (strToArr[i] === inCorrect[j]) {
+                strToArr[i] = correct[j]
+            }
+        }
+
     }
-  }
-
-}
-return strToArr.join('');
+    return strToArr.join('');
 }
 
 console.log(correct('L0ND0N'));
@@ -100,16 +101,33 @@ console.log(correct('51NGAP0RE'));
 
 function bmi(weight, height) {
 
-  let bmi = weight / (height*height);
+    let bmi = weight / (height * height);
 
-if(bmi <= 18.5){
-  return 'Underweight'
-}else if (bmi <= 25){
-  return 'Normal'
-}else if (bmi <= 30){
-  return 'Overweight'
-}else if (bmi > 30){
-  return 'Obese'
+    if (bmi <= 18.5) {
+        return 'Underweight'
+    } else if (bmi <= 25) {
+        return 'Normal'
+    } else if (bmi <= 30) {
+        return 'Overweight'
+    } else if (bmi > 30) {
+        return 'Obese'
+    }
+
 }
 
+// 7 kyu
+// Odd or Even?
+// Given a list of integers, determine whether the sum of its elements is odd or even.
+// Give your answer as a string matching "odd" or "even".
+// If the input array is empty consider it as: [0] (array with a zero).
+
+function oddOrEven(array) {
+  let sum = array.reduce((acc, item) => {
+    return  acc + item
+  },0)
+
+ return sum % 2 === 0 ?  'even' :  'odd'
+
 }
+
+
