@@ -48,3 +48,45 @@ function countBy(x, n) {
   }
   return z;
 }
+
+//16.08.2024
+//8 kyu
+// Correct the mistakes of the character recognition software
+// Character recognition software is widely used to digitise printed texts. Thus the texts can be edited, searched and stored on a computer.
+// When documents (especially pretty old ones written with a typewriter), are digitised character recognition softwares often make mistakes.
+// Your task is correct the errors in the digitised text. You only have to handle the following mistakes:
+// S is misinterpreted as 5
+// O is misinterpreted as 0
+// I is misinterpreted as 1
+// The test cases contain numbers only by mistake
+// Character recognition software is widely used to digitise printed texts. Thus the texts can be edited, searched and stored on a computer.
+
+// When documents (especially pretty old ones written with a typewriter), are digitised character recognition softwares often make mistakes.
+
+// Your task is correct the errors in the digitised text. You only have to handle the following mistakes:
+
+// S is misinterpreted as 5
+// O is misinterpreted as 0
+// I is misinterpreted as 1
+// The test cases contain numbers only by mistake.
+let str = 'L0ND0N';
+function correct(string) {
+  let inCorrect = ['0', '5', '1'];
+  let correct = ['O', 'S', 'I']
+  let strToArr = string.split('');
+
+
+for (let i = 0; i < strToArr.length; i++){
+  for (let j = 0; j < inCorrect.length; j++){
+    if (strToArr[i] === inCorrect[j]){
+      strToArr[i] = correct[j]
+    }
+  }
+
+}
+return strToArr.join('');
+}
+
+console.log(correct('L0ND0N'));
+console.log(correct('51NGAP0RE'));
+
