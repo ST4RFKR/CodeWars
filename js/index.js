@@ -4,11 +4,11 @@
 // Write a function which takes a list of strings and returns each line prepended by the correct number.
 const arr = ['a', 'b', 'c'];
 var number = function (array) {
-    const fixedArr = array.map((item, idx) => {
-        return `${idx + 1}:${item}`;
-    });
+  const fixedArr = array.map((item, idx) => {
+    return `${idx + 1}:${item}`;
+  });
 
-    return fixedArr;
+  return fixedArr;
 };
 const number1 = (array) => array.map((item, idx) => `${idx + 1}:${item}`);
 
@@ -26,14 +26,14 @@ positiveSum([1, -4, 7, 12]);
 // Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
 
 var countSheep = function (num) {
-    let str = '';
-    if (num < 0) return;
-    if (num === 0) return str;
-    for (let i = 0; i < num; i++) {
-        console.log(i);
-        str = str + `${i + 1} sheep...`;
-    }
-    return str;
+  let str = '';
+  if (num < 0) return;
+  if (num === 0) return str;
+  for (let i = 0; i < num; i++) {
+    console.log(i);
+    str = str + `${i + 1} sheep...`;
+  }
+  return str;
 };
 
 // 8 kyu Count by X
@@ -42,11 +42,11 @@ var countSheep = function (num) {
 // Return the results as an array or list ( depending on language ).
 
 function countBy(x, n) {
-    let z = [];
-    for (let i = 1; i <= n; i++) {
-        z.push(x * i);
-    }
-    return z;
+  let z = [];
+  for (let i = 1; i <= n; i++) {
+    z.push(x * i);
+  }
+  return z;
 }
 
 //16.08.2024
@@ -72,24 +72,22 @@ function countBy(x, n) {
 let str = 'L0ND0N';
 
 function correct(string) {
-    let inCorrect = ['0', '5', '1'];
-    let correct = ['O', 'S', 'I']
-    let strToArr = string.split('');
+  let inCorrect = ['0', '5', '1'];
+  let correct = ['O', 'S', 'I'];
+  let strToArr = string.split('');
 
-
-    for (let i = 0; i < strToArr.length; i++) {
-        for (let j = 0; j < inCorrect.length; j++) {
-            if (strToArr[i] === inCorrect[j]) {
-                strToArr[i] = correct[j]
-            }
-        }
-
+  for (let i = 0; i < strToArr.length; i++) {
+    for (let j = 0; j < inCorrect.length; j++) {
+      if (strToArr[i] === inCorrect[j]) {
+        strToArr[i] = correct[j];
+      }
     }
-    return strToArr.join('');
+  }
+  return strToArr.join('');
 }
 
-console.log(correct('L0ND0N'));
-console.log(correct('51NGAP0RE'));
+// console.log(correct('L0ND0N'));
+// console.log(correct('51NGAP0RE'));
 
 // 8 kyu
 // Calculate BMI
@@ -100,19 +98,17 @@ console.log(correct('51NGAP0RE'));
 // if bmi > 30 return "Obese"
 
 function bmi(weight, height) {
+  let bmi = weight / (height * height);
 
-    let bmi = weight / (height * height);
-
-    if (bmi <= 18.5) {
-        return 'Underweight'
-    } else if (bmi <= 25) {
-        return 'Normal'
-    } else if (bmi <= 30) {
-        return 'Overweight'
-    } else if (bmi > 30) {
-        return 'Obese'
-    }
-
+  if (bmi <= 18.5) {
+    return 'Underweight';
+  } else if (bmi <= 25) {
+    return 'Normal';
+  } else if (bmi <= 30) {
+    return 'Overweight';
+  } else if (bmi > 30) {
+    return 'Obese';
+  }
 }
 
 // 7 kyu
@@ -123,11 +119,34 @@ function bmi(weight, height) {
 
 function oddOrEven(array) {
   let sum = array.reduce((acc, item) => {
-    return  acc + item
-  },0)
+    return acc + item;
+  }, 0);
 
- return sum % 2 === 0 ?  'even' :  'odd'
-
+  return sum % 2 === 0 ? 'even' : 'odd';
 }
+// 7 kyu
+// Find the middle element
 
+// As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
 
+// The input to the function will be an array of three distinct numbers (Haskell: a tuple).
+
+// For example:
+
+// gimme([2, 3, 1]) => 0
+// 2 is the number that fits between 1 and 3 and the index of 2 in the input array is 0.
+
+// Another example (just to make sure it is clear):
+
+// gimme([5, 10, 14]) => 1
+// 10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
+
+function gimme(triplet) {
+  let max = Math.max(...triplet);
+  let min = Math.min(...triplet);
+
+  let midleNum = triplet.filter((item) => item !== max && item !== min)[0];
+  let middleIndex = triplet.findIndex((item) => item == midleNum);
+  console.log(middleIndex);
+}
+gimme([2, 3, 1]);
