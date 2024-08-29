@@ -145,8 +145,23 @@ function gimme(triplet) {
   let max = Math.max(...triplet);
   let min = Math.min(...triplet);
 
-  let midleNum = triplet.filter((item) => item !== max && item !== min)[0];
-  let middleIndex = triplet.findIndex((item) => item == midleNum);
-  console.log(middleIndex);
+  let [middleNum] = triplet.filter((item) => item !== max && item !== min);
+  let middleIndex = triplet.findIndex((item) => item == middleNum);
+  console.log(middleNum);
+
+  return middleIndex;
 }
 gimme([2, 3, 1]);
+// 6 kuy isPangram
+// A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+
+Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
+function isPangram(string) {
+  let alphabetSet = new Set('abcdefghijklmnopqrstuvwxyz');
+  const toLowerCase = string.toLowerCase();
+  const removeSpacesAndJoin = toLowerCase.split(' ').join('');
+  const uniqSumbols = new Set(removeSpacesAndJoin);
+  let isPangram = [...alphabetSet].every((item) => uniqSumbols.has(item));
+  return isPangram;
+}
+isPangram('The quick brown fox jumps over the lazy dog.');
