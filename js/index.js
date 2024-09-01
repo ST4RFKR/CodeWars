@@ -208,7 +208,7 @@ var number = function (busStops) {
   sumTwoArr = twoArr.reduce((acc, item) => {
     return (acc = acc + item);
   }, 0);
-  console.log(firstArr, twoArr, sumFirtsArr, sumTwoArr);
+
   return sumFirtsArr - sumTwoArr;
 };
 number([
@@ -216,3 +216,20 @@ number([
   [3, 5],
   [5, 8],
 ]);
+// 7 kyu
+// Mumbling
+// This time no story, no theory. The examples below show you how to write function accum:
+// Examples:
+// accum("abcd") -> "A-Bb-Ccc-Dddd"
+// accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+// accum("cwAt") -> "C-Ww-Aaa-Tttt"
+// The parameter of accum is a string which includes only letters from a..z and A..Z.
+function accum(s) {
+  let result = s
+    .split('')
+    .map((item, idx) => {
+      return item.toUpperCase() + item.toLowerCase().repeat(idx);
+    })
+    .join('-');
+  return result;
+}
