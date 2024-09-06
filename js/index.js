@@ -280,7 +280,7 @@ function addBinary(a, b) {
   return sum.toString(2);
 }
 
-console.log(addBinary(5, 9));
+// console.log(addBinary(5, 9));
 // 8 kyu
 // Beginner - Lost Without a Map
 // Given an array of integers, return a new array with each value doubled.
@@ -288,4 +288,55 @@ console.log(addBinary(5, 9));
 // [1, 2, 3] --> [2, 4, 6]
 function maps(x) {
   return x.map((item) => item * 2);
+}
+// 8 kyu
+// Square(n) Sum
+// 159038292% of 18,00896,768 of 272,176jhoffner1 Issue Reported
+//  JavaScript
+// Node v18.x
+// VIM
+// EMACS
+// Instructions
+// Output
+// Past Solutions
+// Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+function squareSum(numbers) {
+  return numbers.reduce((acc, item) => (acc = acc + item * item), 0);
+}
+// 6 kyu
+// Who likes it?
+// 503395586% of 27,340131,065 of 335,007BattleRattle
+//  JavaScript
+// Node v18.x
+// VIM
+// EMACS
+// Instructions
+// Output
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+
+// Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+
+// []                                -->  "no one likes this"
+// ["Peter"]                         -->  "Peter likes this"
+// ["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+// ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+// ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 others like this"
+function likes(names) {
+  let namesLength = names.length - 2;
+  console.log(namesLength);
+  switch (names.length) {
+    case 0:
+      return 'no one likes this';
+    case 1:
+      return `${names[0]} likes this`;
+    case 2:
+      return `${names[0]} and ${names[1]} like this`;
+    case 3:
+      return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+    case 4:
+      return `${names[0]}, ${names[1]} and ${2} others like this`;
+    default:
+      return `${names[0]}, ${names[1]} and ${namesLength} others like this`;
+  }
 }
