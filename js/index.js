@@ -340,3 +340,6 @@ function likes(names) {
       return `${names[0]}, ${names[1]} and ${namesLength} others like this`;
   }
 }
+function makeUpperCase(str) {
+  return str.toUpperCase();
+}
