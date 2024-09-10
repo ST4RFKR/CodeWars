@@ -380,14 +380,20 @@ function finalGrade(exam, projects) {
     return 0;
   }
 }
-console.log(finalGrade(100, 12));
-console.log(finalGrade(85, 5));
-console.log(finalGrade(52, 12));
-console.log(finalGrade(0, 11));
+// console.log(finalGrade(100, 12));
+// console.log(finalGrade(85, 5));
+// console.log(finalGrade(52, 12));
+// console.log(finalGrade(0, 11));
 
 function arrayDiff(a, b) {
   return a.filter((item) => !b.some((bItem) => bItem === item));
 }
 
-console.log(arrayDiff([1, 2, 2], [1]));
-console.log(arrayDiff([1, 2, 3], [1, 2]));
+// console.log(arrayDiff([1, 2, 2], [1]));
+// console.log(arrayDiff([1, 2, 3], [1, 2]));
+function fakeBin(x) {
+  return x
+    .split('')
+    .map((item) => (item <= '4' ? '0' : '1'))
+    .join('');
+}
