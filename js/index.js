@@ -448,3 +448,14 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
   let difference = 2 * sonYearsOld - dadYearsOld;
   return Math.abs(difference);
 }
+function toJadenCase(str) {
+  let newStr = str.split(' ').map((word) => word.replace(word[0], word[0].toUpperCase()));
+  return newStr.join(' ');
+}
+String.prototype.toJadenCase = function () {
+  return this.split(' ')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
+
+toJadenCase("How can mirrors be real if our eyes aren't real");
