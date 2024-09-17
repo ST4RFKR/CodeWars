@@ -424,3 +424,27 @@ function twiceAsOld(dadYearsOld, sonYearsOld) {
   let difference = 2 * sonYearsOld - dadYearsOld;
   return Math.abs(difference);
 }
+function basicOp(operation, value1, value2) {
+  switch (operation) {
+    case '+':
+      return value1 + value2;
+    case '-':
+      return value1 - value2;
+    case '*':
+      return value1 * value2;
+    case '/':
+      return value1 / value2;
+    default:
+      return 0;
+  }
+}
+function removeChar(str) {
+  return str.slice(1, -1);
+}
+function smash(words) {
+  return words.join(' ');
+}
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  let difference = 2 * sonYearsOld - dadYearsOld;
+  return Math.abs(difference);
+}
