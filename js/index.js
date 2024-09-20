@@ -500,3 +500,9 @@ var uniqueInOrder = function (iterable) {
   return res;
 };
 uniqueInOrder('AAAABBBCcCDAABBB');
+function findSmallestInt(arr) {
+  let arrSorted = arr.sort((a, b) => a - b);
+  return arrSorted[0];
+}
+console.log(findSmallestInt([78, 56, 232, 12, 8]));
+console.log(findSmallestInt([-78, 56, 232, 12, 8]));
