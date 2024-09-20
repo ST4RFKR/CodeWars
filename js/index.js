@@ -459,3 +459,44 @@ String.prototype.toJadenCase = function () {
 };
 
 toJadenCase("How can mirrors be real if our eyes aren't real");
+function isIsogram(str) {
+  let strtoLover = str.toLowerCase();
+  // console.log([...strtoLover].join(''))
+  // console.log([...new Set([...strtoLover])].join(''))
+
+  if ([...strtoLover].join('') === [...new Set([...strtoLover])].join('')) {
+    return (res = true);
+  } else {
+    return (res = false);
+  }
+}
+
+function filter_list(l) {
+  return l.filter((el) => typeof el !== 'string');
+}
+function humanReadable(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = seconds % 60;
+
+  return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(
+    secs,
+  ).padStart(2, '0')}`;
+}
+function reverseList(list) {
+  return list.reverse();
+}
+var uniqueInOrder = function (iterable) {
+  // let strToArr = iterable.split("");
+  let strToArr = [...iterable];
+  let res = [];
+  for (let i = 0; i < strToArr.length; i++) {
+    console.log(strToArr[i]);
+    if (strToArr[i] !== strToArr[i + 1]) {
+      res.push(strToArr[i]);
+    }
+  }
+
+  return res;
+};
+uniqueInOrder('AAAABBBCcCDAABBB');
