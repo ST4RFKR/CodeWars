@@ -491,7 +491,7 @@ var uniqueInOrder = function (iterable) {
   let strToArr = [...iterable];
   let res = [];
   for (let i = 0; i < strToArr.length; i++) {
-    console.log(strToArr[i]);
+    // console.log(strToArr[i]);
     if (strToArr[i] !== strToArr[i + 1]) {
       res.push(strToArr[i]);
     }
@@ -508,3 +508,21 @@ function findSmallestInt(arr) {
 function hoopCount(n) {
   return n < 10 ? 'Keep at it until you get it' : 'Great, now move on to tricks';
 }
+function solution(string) {
+  let arrLover = string.toLowerCase().split('');
+  let word = [];
+  let idx = [];
+  arrLover.forEach((el, idx) => {
+    if (el !== string.split('')[idx]) {
+      word.push(string.split('')[idx]);
+    }
+  });
+  idx = string.replace(word, ` ${word}`);
+  console.log(word, idx);
+  // for (let i = 0; i < word.length; i++) {
+  //   idx = string.replace(word, `${word}`);
+  // }
+  return idx;
+}
+console.log(solution('camelCasing'));
+console.log(solution('camelCasingTest'));
