@@ -509,20 +509,44 @@ function hoopCount(n) {
   return n < 10 ? 'Keep at it until you get it' : 'Great, now move on to tricks';
 }
 function solution(string) {
-  let arrLover = string.toLowerCase().split('');
-  let word = [];
-  let idx = [];
-  arrLover.forEach((el, idx) => {
-    if (el !== string.split('')[idx]) {
-      word.push(string.split('')[idx]);
+  // let arrLover = string.toLowerCase().split('');
+  // let word = [];
+  // let idx = [];
+  // arrLover.forEach((el, idx) => {
+  //   if (el !== string.split('')[idx]) {
+  //     word.push(string.split('')[idx]);
+  //   }
+  // });
+  // idx = string.replace(word, ` ${word}`);
+  // console.log(word, idx);
+  // // for (let i = 0; i < word.length; i++) {
+  // //   idx = string.replace(word, `${word}`);
+  // // }
+  string = string.split('').map((el) => {
+    if (el === el.toUpperCase()) {
+      el = ' ' + el;
     }
+    return el;
   });
-  idx = string.replace(word, ` ${word}`);
-  console.log(word, idx);
-  // for (let i = 0; i < word.length; i++) {
-  //   idx = string.replace(word, `${word}`);
-  // }
-  return idx;
+  return string.join('');
 }
-console.log(solution('camelCasing'));
-console.log(solution('camelCasingTest'));
+function highAndLow(numbers) {
+  const numArray = numbers.split(' ').map(Number);
+  const max = Math.max(...numArray);
+  const min = Math.min(...numArray);
+  return `${min}, ${max}`;
+}
+function getMiddle(s) {
+  let arr = [];
+  const len = s.length; // Определяем длину строки
+  if (len % 2 === 0) {
+    // Если длина четная
+    arr.push(s[len / 2 - 1], s[len / 2]);
+  } else {
+    // Если длина нечетная
+    arr.push(s[Math.floor(len / 2)]);
+  }
+  return arr.join('');
+}
+console.log(getMiddle('test'));
+console.log(getMiddle('testing'));
