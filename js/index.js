@@ -548,5 +548,64 @@ function getMiddle(s) {
   }
   return arr.join('');
 }
-console.log(getMiddle('test'));
-console.log(getMiddle('testing'));
+function sumTwoSmallestNumbers(numbers) {
+  let Sorted = numbers.sort((a, b) => a - b);
+  // Sorted.map((el, idx,arr) => {
+  //   if (el > 0){
+  //     arr.push(el)
+  //   }
+  // })
+  return Sorted[0] + Sorted[1];
+}
+function gimme(triplet) {
+  const sorted = [...triplet].sort((a, b) => a - b);
+  const midl = sorted[1];
+  return triplet.indexOf(midl);
+}
+function bubbleSort(arr) {
+  const n = arr.length; // Довжина масиву
+
+  for (let i = 0; i < n - 1; i++) {
+    // Проходимо масив
+    let swapped = false; // Флаг для перевірки обміну
+
+    for (let j = 0; j < n - 1 - i; j++) {
+      // Порівнюємо сусідні елементи
+      if (arr[j] > arr[j + 1]) {
+        // Якщо елемент більше наступного
+        // Обмін місцями
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        swapped = true; // Встановлюємо флаг
+      }
+    }
+
+    // Якщо не було обміну, масив вже відсортовано
+    if (!swapped) {
+      break;
+    }
+  }
+
+  return arr; // Повертаємо відсортований масив
+}
+var number = function (array) {
+  let fix = [];
+  array.map((el, idx) => {
+    fix.push(`${idx + 1}: ${el}`);
+  });
+  return fix;
+};
+function XO(str) {
+  let strLover = str.toLowerCase();
+  let xCount = 0;
+  let oCount = 0;
+
+  strLover.split('').forEach((el) => {
+    if (el === 'x') {
+      xCount++;
+    } else if (el === 'o') {
+      oCount++;
+    }
+  });
+  if (xCount === 0 && oCount === 0) return true;
+  return xCount === oCount;
+}
