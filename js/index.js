@@ -621,4 +621,34 @@ function arithmetic(a, b, operator) {
       return a / b;
   }
 }
-console.log(arithmetic(1, 2, 'add'));
+// I          1
+// V          5
+// X          10
+// L          50
+// C          100
+// D          500
+// M          1,000
+
+// console.log(arithmetic(1, 2, 'add'));
+// function solution(number) {
+//   let arr = [1, 5, 10, 50, 100, 500, 1000];
+//   let res = [];
+
+//   let count;
+//   for (let i = arr.length - 1; i < 0; i--) {
+//     if (number - arr[arr.length - i] >= number) {
+//       number -= arr[arr.length - i];
+//     }
+//   }
+// }
+// console.log(solution(2008));
+function count(string) {
+  return string.split('').reduce((acc, el) => {
+    if (!acc[el]) {
+      acc[el] = 0;
+    }
+    acc[el]++;
+    return acc;
+  }, {});
+}
+console.log(count('aba'));
