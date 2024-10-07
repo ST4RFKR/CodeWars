@@ -807,4 +807,58 @@ const products = {
   apple: 10,
   banana: 5,
   orange: 8,
+  orange1: 8,
+  orange2: 8,
 };
+
+function getTotalProducts(obj) {
+  let res = 0;
+  for (const el in obj) {
+    res = res + obj[el];
+  }
+  // console.log(res);
+
+  return res;
+}
+getTotalProducts(products);
+
+Object.defineProperty(products, 'total', {
+  get: function () {
+    return getTotalProducts(this);
+  },
+});
+
+const totalProducts = getTotalProducts(products);
+
+// Напиши функцию, которая вычисляет средний балл по каждому предмету.
+// Добавь динамическое свойство, которое будет содержать средний балл по каждому предмету для всех студентов.
+const students = {
+  Alice: { Math: 90, History: 85 },
+  Bob: { Math: 70, History: 80 },
+  Charlie: { Math: 85, History: 95 },
+  Mike: { Math: 100, History: 50 },
+};
+
+function getAverageGrades(students) {
+  let MathTotal = 0;
+  let HistoryTotal = 0;
+  const studentCount = Object.keys(students).length;
+  for (const student in students) {
+    MathTotal += students[student].Math;
+    HistoryTotal += students[student].History;
+  }
+  let MathAverage = MathTotal / studentCount;
+  let HistoryAverage = HistoryTotal / studentCount;
+  console.log(MathAverage, HistoryAverage);
+
+  Object.defineProperty(students, 'averageGrades', {
+    get: function () {
+      return {
+        Math: MathAverage,
+        History: HistoryAverage,
+      };
+    },
+  });
+}
+getAverageGrades(students);
+console.log(students);
