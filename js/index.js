@@ -651,4 +651,160 @@ function count(string) {
     return acc;
   }, {});
 }
-console.log(count('aba'));
+// console.log(count('aba'));
+function maps(x) {
+  return x.map((el) => el * 2);
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+const square = (a) => {
+  return a * a;
+};
+function peopleWithAgeDrink(old) {}
+// console.log(peopleWithAgeDrink(30));
+
+function checkForFactor(base, factor) {
+  if (base % factor == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// function between(a, b) {
+//   let arr = [];
+//   for (let i = a; i <= b; i++) {
+//     arr.push(i);
+//   }
+//   return arr;
+// }
+// console.log(between(1, 4))
+
+function reverseWords(str) {
+  let arr = str.split(' ');
+  let arrToRever = arr.map((el) => el.split('').reverse().join(''));
+  return arrToRever.join(' ');
+}
+// console.log(reverseWords('This is an example!'));
+
+function spinWords(string) {
+  return string
+    .split(' ')
+    .map((el) => (el.length >= 5 ? el.split('').reverse().join('') : el))
+    .join(' ');
+}
+function vaporcode(string) {
+  let bra = string.split('');
+  let x = bra.map((el) => {
+    if (el === ' ') return '';
+
+    return el.toUpperCase();
+  });
+  return x.join('').split('').join('  ');
+}
+
+// console.log(vaporcode('Lets go to the movies'));
+
+function solution(string) {
+  let arrLover = string.toLowerCase().split('');
+  let word = [];
+
+  let idx = [];
+  arrLover.forEach((el, idx) => {
+    if (el !== string[idx]) {
+      word.push(string[idx]);
+    }
+  });
+  // idx = string.replace(word, ` ${word}`);
+  // console.log(word, idx);
+  // debugger;
+  console.log(word);
+  for (let i = 0; i < word.length; i++) {
+    return string.replace(word[i], ` ${word[i]}`);
+  }
+  return idx;
+  // string = string.split('').map((el) => {
+  //   if (el === el.toUpperCase()) {
+  //     el = ' ' + el;
+  //   }
+  //   return el;
+  // });
+  // return string.join('');
+}
+
+// console.log(solution('camelCasing'));
+// console.log(solution('camelCasingRamel'));
+// function solution(string) {
+//   const arr = string.split('');
+//   const newArr = arr.map((e) => {
+//     console.log('2', e.toUpperCase(), '1', e);
+//     // console.log('1', e);
+//     if (e === e.toUpperCase()) {
+//       return ` ${e}`;
+//     }
+//     return e;
+//   });
+//   return newArr.join('');
+// }
+// console.log(solution('camelCasingFaceHello'));
+
+// function findOdd(A) {
+//   let x;
+//   let res = A.sort((a, b) => a - b);
+
+//   res.map((el, idx) => {
+//     if (el[idx] !== el[idx + 1]) {
+//       x = el[idx];
+//     }
+//   });
+//   console.log(x);
+//   return res;
+// }
+
+// console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
+// let myStr = 'хороший день';
+// let day = [[...myStr]];
+// console.log(day);
+// let x = []
+// for (const [el, idx] of [1,2,3]) {
+
+// }
+Array.prototype.myFilter = function (callback) {
+  const result = [];
+
+  // console.log(this);
+
+  for (let i = 0; i < this.length; i++) {
+    if (callback(this[i], i, this)) {
+      result.push(this[i]);
+    }
+  }
+  return result;
+};
+const numbers = [1, 2, 3, 4, 5];
+const filtered = numbers.myFilter((num) => num > 2);
+
+// console.log(filtered);
+
+multiplicationTable = function (size) {
+  let strArr = [];
+
+  for (let i = 1; i <= size; i++) {
+    let str = [];
+    for (let j = 1; j <= size; j++) {
+      str.push(i * j);
+    }
+    strArr.push(str);
+  }
+
+  return strArr;
+};
+// console.log(multiplicationTable(3));
+
+const products = {
+  apple: 10,
+  banana: 5,
+  orange: 8,
+};
