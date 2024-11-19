@@ -770,95 +770,188 @@ function solution(string) {
 // let x = []
 // for (const [el, idx] of [1,2,3]) {
 
-// }
-Array.prototype.myFilter = function (callback) {
-  const result = [];
+// // }
+// Array.prototype.myFilter = function (callback) {
+//   const result = [];
 
-  // console.log(this);
+//   // console.log(this);
 
-  for (let i = 0; i < this.length; i++) {
-    if (callback(this[i], i, this)) {
-      result.push(this[i]);
-    }
-  }
-  return result;
-};
-const numbers = [1, 2, 3, 4, 5];
-const filtered = numbers.myFilter((num) => num > 2);
+//   for (let i = 0; i < this.length; i++) {
+//     if (callback(this[i], i, this)) {
+//       result.push(this[i]);
+//     }
+//   }
+//   return result;
+// };
+// const numbers = [1, 2, 3, 4, 5];
+// const filtered = numbers.myFilter((num) => num > 2);
 
 // console.log(filtered);
 
-multiplicationTable = function (size) {
-  let strArr = [];
+// multiplicationTable = function (size) {
+//   let strArr = [];
 
-  for (let i = 1; i <= size; i++) {
-    let str = [];
-    for (let j = 1; j <= size; j++) {
-      str.push(i * j);
-    }
-    strArr.push(str);
-  }
+//   for (let i = 1; i <= size; i++) {
+//     let str = [];
+//     for (let j = 1; j <= size; j++) {
+//       str.push(i * j);
+//     }
+//     strArr.push(str);
+//   }
 
-  return strArr;
-};
+//   return strArr;
+// };
 // console.log(multiplicationTable(3));
 
-const products = {
-  apple: 10,
-  banana: 5,
-  orange: 8,
-  orange1: 8,
-  orange2: 8,
-};
+// const products = {
+//   apple: 10,
+//   banana: 5,
+//   orange: 8,
+//   orange1: 8,
+//   orange2: 8,
+// };
 
-function getTotalProducts(obj) {
-  let res = 0;
-  for (const el in obj) {
-    res = res + obj[el];
-  }
-  // console.log(res);
+// function getTotalProducts(obj) {
+//   let res = 0;
+//   for (const el in obj) {
+//     res = res + obj[el];
+//   }
+//   // console.log(res);
 
-  return res;
-}
-getTotalProducts(products);
+//   return res;
+// }
+// getTotalProducts(products);
 
-Object.defineProperty(products, 'total', {
-  get: function () {
-    return getTotalProducts(this);
-  },
-});
+// Object.defineProperty(products, 'total', {
+//   get: function () {
+//     return getTotalProducts(this);
+//   },
+// });
 
-const totalProducts = getTotalProducts(products);
+// const totalProducts = getTotalProducts(products);
 
-// Напиши функцию, которая вычисляет средний балл по каждому предмету.
-// Добавь динамическое свойство, которое будет содержать средний балл по каждому предмету для всех студентов.
-const students = {
-  Alice: { Math: 90, History: 85 },
-  Bob: { Math: 70, History: 80 },
-  Charlie: { Math: 85, History: 95 },
-  Mike: { Math: 100, History: 50 },
-};
+// // Напиши функцию, которая вычисляет средний балл по каждому предмету.
+// // Добавь динамическое свойство, которое будет содержать средний балл по каждому предмету для всех студентов.
+// const students = {
+//   Alice: { Math: 90, History: 85 },
+//   Bob: { Math: 70, History: 80 },
+//   Charlie: { Math: 85, History: 95 },
+//   Mike: { Math: 100, History: 50 },
+// };
 
-function getAverageGrades(students) {
-  let MathTotal = 0;
-  let HistoryTotal = 0;
-  const studentCount = Object.keys(students).length;
-  for (const student in students) {
-    MathTotal += students[student].Math;
-    HistoryTotal += students[student].History;
-  }
-  let MathAverage = MathTotal / studentCount;
-  let HistoryAverage = HistoryTotal / studentCount;
-  console.log(MathAverage, HistoryAverage);
+// function getAverageGrades(students) {
+//   let MathTotal = 0;
+//   let HistoryTotal = 0;
+//   const studentCount = Object.keys(students).length;
+//   for (const student in students) {
+//     MathTotal += students[student].Math;
+//     HistoryTotal += students[student].History;
+//   }
+//   let MathAverage = MathTotal / studentCount;
+//   let HistoryAverage = HistoryTotal / studentCount;
+//   console.log(MathAverage, HistoryAverage);
 
-  Object.defineProperty(students, 'averageGrades', {
-    get: function () {
-      return {
-        Math: MathAverage,
-        History: HistoryAverage,
-      };
-    },
-  });
-}
-getAverageGrades(students);
-console.log(students);
+//   Object.defineProperty(students, 'averageGrades', {
+//     get: function () {
+//       return {
+//         Math: MathAverage,
+//         History: HistoryAverage,
+//       };
+//     },
+//   });
+// }
+// getAverageGrades(students);
+// console.log(students);
+// function alan(x) {
+//   let str = ['Rejection', 'Disappointment', 'Backstabbing Central', 'Shattered Dreams Parkway'];
+
+//   let result = str.filter((station) => x.includes(station));
+//   console.log(result);
+
+//   return result.length === str.length
+//     ? `Smell my cheese you mother!`
+//     : 'No, seriously, run. You will miss it.';
+// }
+
+// console.log(
+//   alan([
+//     'Norwich',
+//     'Rejection',
+//     'Disappointment',
+//     'Backstabbing Central',
+//     'Shattered Dreams Parkway',
+//     'London',
+//   ]),
+// );
+
+//'Smell my cheese you mother!
+// function birdCode(arr) {
+//   const test = (acc, arrBirdName) => {
+//     acc.push(arrBirdName[0].slice(0, 4));
+//     return 'success';
+//   };
+//   const obj = {
+//     1: test,
+//   };
+//   return arr.reduce((acc, el) => {
+//     const str = el.replace(/[-]/g, ' ').toUpperCase();
+//     const arrBirdName = str.split(' ');
+//     console.log(arrBirdName.length);
+
+//     console.log(obj[arrBirdName.length]);
+//     console.log('foo', obj[arrBirdName.length](acc, arrBirdName));
+
+//     if (arrBirdName.length === 2) {
+//       // 0 1, 0 1 2
+//       acc.push(arrBirdName[0].slice(0, 2) + arrBirdName[1].slice(0, 2));
+//     }
+//     if (arrBirdName.length === 3) {
+//       acc.push(
+//         arrBirdName[0].slice(0, 1) + arrBirdName[1].slice(0, 1) + arrBirdName[2].slice(0, 2),
+//       );
+//     }
+//     if (arrBirdName.length === 4) {
+//       acc.push(
+//         arrBirdName[0].slice(0, 1) +
+//           arrBirdName[1].slice(0, 1) +
+//           arrBirdName[2].slice(0, 1) +
+//           arrBirdName[3].slice(0, 1),
+//       );
+//     }
+
+//     return acc;
+//   }, []);
+// }
+
+// console.log(birdCode(['Common']));
+// function halvingSum(n) {
+//   let m = 0;
+//   // if (n !== 1) {
+//   //   m = halvingSum(Math.floor(n / 2));
+//   // }
+//   // return m + n;
+
+//   while (n !== 1) {
+//     m / Math.floor(n / 2);
+//     return m + n;
+//   }
+// }
+// console.log(halvingSum(25));
+// let n = 5;
+
+// console.log(Array(5));
+
+// const factorial = (n) => { if (n < 0) return undefined;
+//   // Факториал не определен для отрицательных чисел return
+//   Array.from({ length: n }, (_, i) => i + 1).reduce((acc, num) => acc * num, 1); }; console.log(factorial(5)); // Вывод: 120
+// function isSmooth(arr) {
+//   let middleChar;
+//   if (arr.length % 2) {
+//     middleChar = arr[Math.floor(arr.length / 2)];
+//   } else {
+//     middleChar = arr[arr.length / 2] + arr[arr.length / 2 - 1];
+//   }
+
+//   return middleChar === arr[0] && middleChar === arr[arr.length - 1] ? 'true' : 'false';
+// }
+// console.log(isSmooth([7, 2, -4, 3, 5, 7]));
