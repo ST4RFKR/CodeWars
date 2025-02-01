@@ -14,8 +14,8 @@ var isPalindrome = function (x) {
   return false;
 };
 
-console.log(isPalindrome(121)); // true
-console.log(isPalindrome(-121)); //false
+// console.log(isPalindrome(121)); // true
+// console.log(isPalindrome(-121)); //false
 
 var isPalindrome = function (x) {
   if (x < 0 || (x % 10 === 0 && x !== 0)) {
