@@ -49,13 +49,49 @@
 // [2, 5, 1, 7]
 
 // Был в четверг собес, была такая задачка
-const arr = [1, 1, 2, 2, 2, 5, 5, 5, 2, 7];
-function fn(params) {
-  let res = [];
-  for (let i = 0; i < params.length; i++) {
-    const chank = [];
-    if (params[i] === params[i + 1]) {
-      chank.push(params[i]);
-    }
+// const arr = [1, 1, 2, 2, 2, 5, 5, 5, 2, 7];
+// function fn(params) {
+//   let res = [];
+//   for (let i = 0; i < params.length; i++) {
+//     const chank = [];
+//     if (params[i] === params[i + 1]) {
+//       chank.push(params[i]);
+//     }
+//   }
+// }
+// /**
+//  * @param {number[]} nums
+//  * @param {number} target
+//  * @return {number[]}
+//  */
+// var twoSum = function (nums, target) {
+//   let left = 0;
+//   let right = nums.length - 1;
+//   while (left < right) {
+//     let sum = nums[left] + nums[right];
+//     if (sum < target) {
+//       left++;
+//     }
+//     if (sum > target) {
+//       right--;
+//     }
+//     if (sum === target) {
+//       return [left, right];
+//     }
+//   }
+//   return [];
+// };
+// console.log(twoSum([2, 7, 11, 15], 9));
+function reverse(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left === right) {
+    let temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
+    left++;
+    right--;
   }
+  return arr;
 }
+console.log(reverse(['a', 'b', 'c', 'd', 'e']));
