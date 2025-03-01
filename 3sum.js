@@ -15,7 +15,7 @@ var threeSum = function (nums) {
     while (left < right) {
       let current_sum = nums[left] + nums[right];
       if (current_sum == target) {
-        res.add([target, nums[left], nums[right]]);
+        res.add(target, nums[left], nums[right]);
       }
       if (current_sum > target) {
         right -= 1;
